@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #colorBox{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            transition: background-color 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBox" onClick="changeColor()"></div>
+
+    <script>
+        function getRandomColor(){
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for(let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeColor(){
+            const colorBox = document.getElementById('colorBox');
+            const randomColor = getRandomColor();
+            colorBox.style.backgroundColor = randomColor;
+        }
+    </script>
+    
+</body>
+</html>
